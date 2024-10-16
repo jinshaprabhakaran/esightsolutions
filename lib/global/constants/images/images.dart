@@ -1,0 +1,11 @@
+String star = 'assets/images/star.png';
+String profile ='assets/images/profile.png';
+String calendar ='assets/icons/calendar.svg';
+String filterIcon = 'assets/icons/filter.svg';
+String dribble = 'assets/icons/dribbbleicon.svg';
+String whatsapp = 'assets/icons/whatsapp.svg';
+String instagram = 'assets/icons/instagram.svg';
+String youtube = 'assets/icons/youtube.svg';
+String clickup = 'assets/images/clickup.png';
+String arrow = 'assets/icons/down-arrow.svg';
+String smallstar = 'assets/images/smallstar.png';
