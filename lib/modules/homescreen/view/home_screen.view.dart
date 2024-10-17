@@ -24,27 +24,29 @@ class _HomeScreenState extends State<HomeScreen> {
       child: const CommonAppBarWidget()
     ),
     body:  
-      Column(
-        children: [
-          Stack (clipBehavior: Clip.none,
-            children:[ const HomeDetailsWidget(),
-               Positioned(bottom: 
-                0.h,
-               left: 0,
-                right: 0,
-          child: const FocusScoreWidget(),)
-               ]),
-               Gap( kIsWeb ? 20.h : 7.h),
-               Padding(
-                 padding:  EdgeInsets.symmetric(horizontal: 10.w),
-                 child: CommonButtonWidget(height: kIsWeb ? 100.h :
-                 50.h,
-                  onPressed: (){
-                   Navigator.pushNamed(context, 'total');
-                 }, text: 'Calculate textamount'),
-               ),
-                 
-                 ]));
+      SingleChildScrollView(physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Stack (clipBehavior: Clip.none,
+              children:[ const HomeDetailsWidget(),
+                 Positioned(bottom: 
+                  0.h,
+                 left: 0,
+                  right: 0,
+            child: const FocusScoreWidget(),)
+                 ]),
+                 Gap( kIsWeb ? 20.h : 7.h),
+                 Padding(
+                   padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                   child: CommonButtonWidget(height: kIsWeb ? 100.h :
+                   50.h,
+                    onPressed: (){
+                     Navigator.pushNamed(context, 'total');
+                   }, text: 'Calculate textamount'),
+                 ),
+                   
+                   ]),
+      ));
    
   }
 }
