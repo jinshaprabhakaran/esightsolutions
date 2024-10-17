@@ -14,23 +14,28 @@ final String subTitle;
 final String image;
   @override
   Widget build(BuildContext context) {
-    return Container(width: width,height: 100.h,
+    return Container(width: width,
       padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
       decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(30.sp)
       ),
-      child: Row(mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
         children: [
-          Expanded(flex:1,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                KStyles().semiBold15(text:title ),
-                KStyles().semiBold14(text:subTitle,color: kGrey )
-              ],
-            ),
+          Row(mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(flex:1,
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    KStyles().semiBold15(text:title ),
+                    KStyles().semiBold14(text:subTitle,color: kGrey )
+                  ],
+                ),
+              ),
+              Gap(30.w),
+             AppIconsWidget(imageName: image)
+            ],
           ),
-          Gap(30.w),
-         AppIconsWidget(imageName: image)
+          Gap(70.h)
         ],
       ),
     );

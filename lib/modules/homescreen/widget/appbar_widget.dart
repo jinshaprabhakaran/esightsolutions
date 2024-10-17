@@ -1,4 +1,5 @@
 import 'package:esightsolutions/global/constants/images/images.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,7 +13,7 @@ class CommonAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(backgroundColor: kLightGrey.withOpacity(0.3),
+    return AppBar(backgroundColor: kIsWeb ? kGrey.shade100 : kGrey.shade200,
     leadingWidth: 70.w,
         leading: Row(children: [
           Gap(10.w),
@@ -21,8 +22,8 @@ class CommonAppBarWidget extends StatelessWidget {
         ],),
         title: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          KStyles().semiBold14(text: 'Welcome back,'),
-          KStyles().semiBold19(text: 'Celeste'),
+       kIsWeb ? KStyles().semiBold16(text: 'Welcome back,') :  KStyles().semiBold14(text: 'Welcome back,'),
+        kIsWeb ? KStyles().semiBold23(text: 'Celeste') :  KStyles().semiBold19(text: 'Celeste'),
         ],),
         actions: [
          SvgPicture.asset(filterIcon),

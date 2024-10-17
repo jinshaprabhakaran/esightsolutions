@@ -1,6 +1,7 @@
 import 'package:esightsolutions/global/constants/images/images.dart';
 import 'package:esightsolutions/global/constants/styles/text_styles.dart';
 import 'package:esightsolutions/modules/homescreen/widget/home_chart.widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,7 +14,7 @@ class HomeDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Container(height: 500.h,
+   return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
           decoration: 
           BoxDecoration(color: kWhite,
@@ -40,8 +41,7 @@ class HomeDetailsWidget extends StatelessWidget {
                     border: Border.all(color: kGrey)
                   ),
                   child: SvgPicture.asset(calendar)
-                  ),
-                   
+                  ),     
               ],
              ),
              Gap(10.h),
@@ -83,7 +83,7 @@ class HomeDetailsWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: const HomeChartWidget(),
               ),
-            Gap(60.h),
+         kIsWeb ? Gap(250.h) : Gap(170.h),
 
             ],
           ),

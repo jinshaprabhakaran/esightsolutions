@@ -63,7 +63,7 @@ class _LandingScreenState extends State<LandingScreen> with TickerProviderStateM
                     double topPosition = landCtrl.verticalAnimation!.value;
 
                     return Positioned(
-                      left: -150.w,
+                      left: -140.w,
                       top: topPosition,
                       child: Stack(
                         alignment: Alignment.center,
@@ -75,7 +75,7 @@ class _LandingScreenState extends State<LandingScreen> with TickerProviderStateM
                               star,
                             ),
                           ),
-                          KStyles().semiBold36(
+                          KStyles().semiBold30(
                             text: landCtrl.texts[landCtrl.highlightedIndex],
                             color: kBlack,
                           ),

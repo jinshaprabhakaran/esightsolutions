@@ -1384,6 +1384,18 @@ class KStyles {
           fontWeight: FontWeight.w600),
     );
   }
+   Text semiBold34(
+      {required String text, Color color = Colors.black, double? height}) {
+    return Text(
+      text,
+      style: TextStyle(
+          height: height,
+          fontFamily: 'ClashDisplay',
+          fontSize: 34.sp,
+          color: color,
+          fontWeight: FontWeight.w600),
+    );
+  }
   Text semiBold36(
       {required String text, Color color = Colors.black, double? height}) {
     return Text(

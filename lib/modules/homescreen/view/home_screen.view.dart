@@ -3,6 +3,7 @@ import 'package:esightsolutions/global/constants/widgets/common_button.widget.da
 import 'package:esightsolutions/modules/homescreen/widget/appbar_widget.dart';
 import 'package:esightsolutions/modules/homescreen/widget/focus_score.widget.dart';
 import 'package:esightsolutions/modules/homescreen/widget/home_details.widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -18,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(backgroundColor: kLightGrey.withOpacity(0.9),
+    return  Scaffold(backgroundColor: kIsWeb ? kGrey.shade100 : kGrey.shade200,
     appBar: PreferredSize(preferredSize: Size.fromHeight(70.sp),
       child: const CommonAppBarWidget()
     ),
@@ -27,15 +28,17 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Stack (clipBehavior: Clip.none,
             children:[ const HomeDetailsWidget(),
-               Positioned(bottom: 0.h,
-          left: 0,
+               Positioned(bottom: 
+                0.h,
+               left: 0,
                 right: 0,
           child: const FocusScoreWidget(),)
                ]),
-               Gap(7.h),
+               Gap( kIsWeb ? 20.h : 7.h),
                Padding(
                  padding:  EdgeInsets.symmetric(horizontal: 10.w),
-                 child: CommonButtonWidget(height: 50.h,
+                 child: CommonButtonWidget(height: kIsWeb ? 100.h :
+                 50.h,
                   onPressed: (){
                    Navigator.pushNamed(context, 'total');
                  }, text: 'Calculate textamount'),

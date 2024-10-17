@@ -1,6 +1,7 @@
 import 'package:esightsolutions/global/constants/widgets/common_button.widget.dart';
 import 'package:esightsolutions/global/constants/widgets/textfield.widget.dart';
 import 'package:esightsolutions/modules/totalamount/controller/totalamount.controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -28,9 +29,9 @@ class _TotalAmountScreenState extends State<TotalAmountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( resizeToAvoidBottomInset: false,
-     backgroundColor: kLightGrey.withOpacity(0.9),
+     backgroundColor: kIsWeb ? kGrey.shade100 : kGrey.shade200,
     appBar: PreferredSize(preferredSize: Size.fromHeight(70.sp),
-      child: AppBar(backgroundColor: kLightGrey.withOpacity(0.4),
+      child: AppBar(backgroundColor: kIsWeb ? kGrey.shade100 : kGrey.shade200,
       leading: 
         IconButton(onPressed: (){
           Navigator.maybePop(context);
@@ -55,17 +56,9 @@ class _TotalAmountScreenState extends State<TotalAmountScreen> {
              ,Gap(20.h),
                 KStyles().med16(text: 'Select tip percentage'),
                TipRadioButton(
-              title: '15%',
-              value: 0.15,
+              title: '10%',
+              value: 0.10,
              onChanged:(value){
-                totalCtrl.tipChange(value!);
-              },
-              selectedVal: totalCtrl.tipPercentage,
-            ),
-            TipRadioButton(
-              title: '18%',
-              value: 0.18,
-              onChanged:(value){
                 totalCtrl.tipChange(value!);
               },
               selectedVal: totalCtrl.tipPercentage,
@@ -73,6 +66,14 @@ class _TotalAmountScreenState extends State<TotalAmountScreen> {
             TipRadioButton(
               title: '20%',
               value: 0.20,
+              onChanged:(value){
+                totalCtrl.tipChange(value!);
+              },
+              selectedVal: totalCtrl.tipPercentage,
+            ),
+            TipRadioButton(
+              title: '25%',
+              value: 0.25,
              onChanged:(value){
                 totalCtrl.tipChange(value!);
               },
@@ -80,13 +81,13 @@ class _TotalAmountScreenState extends State<TotalAmountScreen> {
             ),
             Gap(20.h),
             Center(
-              child: CommonButtonWidget(width: 200.w,height: 40.h,
+              child: CommonButtonWidget(width: kIsWeb ? 400.h : 200.w,height:kIsWeb ? 70.h : 40.h,
                 onPressed: totalCtrl.calculateTotal, text: 'Calculate total'),),
             
             Gap(20.h),
             Center(
               child: KStyles().med17(
-                text: 'Total Amount: \$${totalCtrl.totalAmount.toStringAsFixed(2)}'),
+                text: 'Total Amount: ₹${totalCtrl.totalAmount.toStringAsFixed(2)}'),
             ),
           ],
         );
