@@ -121,7 +121,7 @@ class _FocusScreenState extends State<FocusScreen> {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                   decoration: BoxDecoration(
-                    color:kIsWeb ?Colors.yellow.shade100:
+                    color:kIsWeb ? kYellow.shade100:
                      const Color.fromARGB(255, 241, 207, 157),
                     borderRadius: BorderRadius.circular(30.sp),
                   ),

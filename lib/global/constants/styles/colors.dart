@@ -8,3 +8,4 @@ const kGrey = Colors.grey;
 const kGreen = Colors.green;
 const kRose =  Color(0xFFF86C6C);
 const kRed = Colors.red;
+const kYellow = Colors.yellow;
