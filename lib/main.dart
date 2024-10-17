@@ -1,19 +1,14 @@
 import 'dart:io';
-import 'package:esightsolutions/global/constants/providers/providers.dart';
 import 'package:esightsolutions/global/constants/styles/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'global/constants/routes/routes.dart';
 import 'package:flutter/foundation.dart'; 
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: providersList,
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
